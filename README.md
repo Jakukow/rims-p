@@ -1,3 +1,3 @@
 # Small GSAP and THREEJS project 
 
-Website Live : 
+Website Live : https://rim-j.netlify.app/
