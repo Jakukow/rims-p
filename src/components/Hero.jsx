@@ -29,8 +29,17 @@ const Hero = () => {
 
   useGSAP(() => {
     gsap.to("#hero", { opacity: 1, delay: 2 });
-    gsap.to("#cta", { opacity: 1, y: -50, delay: 2 });
+    gsap.to("#cta", { opacity: 1, y: -50, delay: 3 });
   }, []);
+
+  const handleSmoothScroll = (e) => {
+    e.preventDefault();
+    document
+      .querySelector(e.currentTarget.getAttribute("href"))
+      .scrollIntoView({
+        behavior: "smooth",
+      });
+  };
 
   return (
     <section className="w-full nav-height bg-black relative">
@@ -55,8 +64,8 @@ const Hero = () => {
         id="cta"
         className="flex flex-col items-center opacity-0 translate-y-20"
       >
-        <a href="#highlights" className="btn">
-          Buy
+        <a href="#model" className="btn" onClick={handleSmoothScroll}>
+          Check it out
         </a>
         <p className="font-normal text-xl">From 250$ per wheel</p>
       </div>

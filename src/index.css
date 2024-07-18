@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +28,8 @@
 }
 
 body {
+  scrollbar-width: none;
+
   color: white;
   width: 100dvw;
   overflow-x: hidden;
@@ -55,7 +76,7 @@ canvas {
   }
 
   .common-padding {
-    @apply sm:py-32 py-20 sm:px-10 px-5;
+    @apply sm:pt-20 pt-12 sm:px-10 px-5;
   }
 
   .section-heading {
