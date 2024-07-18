@@ -1,10 +1,10 @@
 import { useGLTF } from "@react-three/drei";
 
-const Rim = (props) => {
-  const { nodes, materials, animations } = useGLTF("/bbs.glb");
+const Rim = ({ scale, rim }) => {
+  const { nodes, materials } = useGLTF("/bbs.glb");
   return (
-    <group {...props} dispose={null}>
-      {props.rim === "bbs" ? (
+    <group scale={scale} dispose={null}>
+      {rim === "bbs" ? (
         <mesh
           castShadow
           receiveShadow

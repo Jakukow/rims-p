@@ -3,8 +3,8 @@ import gsap from "gsap";
 import { useEffect } from "react";
 import { useState } from "react";
 
-const smallHeroVideo = "../../public/assets/videos/HeroSmall.mp4";
-const heroVideo = "../../public/assets/videos/HeroLarge.mp4";
+const smallHeroVideo = "/src/assets/HeroSmall.mp4";
+const heroVideo = "/src/assets/HeroLarge.mp4";
 
 const Hero = () => {
   const [videoSrc, setVideoSrc] = useState(
@@ -65,7 +65,7 @@ const Hero = () => {
         className="flex flex-col items-center opacity-0 translate-y-20"
       >
         <a href="#model" className="btn" onClick={handleSmoothScroll}>
-          Check it out
+          Check 3D Model
         </a>
         <p className="font-normal text-xl">From 250$ per wheel</p>
       </div>

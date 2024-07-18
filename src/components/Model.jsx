@@ -1,8 +1,8 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import ModelView from "./ModelView";
-import * as THREE from "three";
+
 import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
 import { sizes } from "../constants";
@@ -10,13 +10,10 @@ import { sizes } from "../constants";
 const Model = () => {
   const [rim, setRim] = useState("f40");
 
-  const cameraControlF40 = useRef();
-
-  const f40 = useRef(new THREE.Group());
-
   useGSAP(() => {
     gsap.to("#heading", { opacity: 1, y: 0 });
   }, []);
+
   return (
     <section id="model" className="common-padding">
       <div className="screen-max-width">
@@ -25,7 +22,7 @@ const Model = () => {
         </h1>
         <div className="flex flex-col items-center">
           <div className="w-full h-[65vh] md:h-[80vh] overflow-hidden relative">
-            <ModelView groupRef={f40} controlRef={cameraControlF40} rim={rim} />
+            <ModelView rim={rim} />
             <Canvas
               className="w-full h-full"
               style={{
